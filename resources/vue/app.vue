@@ -9,7 +9,7 @@
                 <div class="flex items-center justify-between border-gray-100 py-6 md:justify-start md:space-x-10">
                     <div class="flex justify-start lg:w-0 lg:flex-1">
                         <router-link to="/">
-                            <img style="max-height: 50px;" src="http://localhost:8000/images/logo.png" alt="" title=""/>
+                            <img style="max-height: 50px;" src="https://i.ibb.co/MN8TJx1/logo.png" alt="" title=""/>
                         </router-link>
                     </div>
                     <div class="-my-2 -mr-2 md:hidden">
