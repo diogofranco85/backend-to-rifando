@@ -15,6 +15,11 @@
         @vite('resources/css/app.css')
     </head>
     <body class="antialiased font-montserrat h-screen bg-zinc-800">
+        @if (env('APP_ENV')!== 'Production')
+            <div class="bg-yellow-100 border-1 border border-yellow-600">
+                <p class="text-red-400 text-2lx font-extrabold text-center p-3">Esse ambiente e para desenvolvimento e testes</p>
+            </div>
+        @endif
         <div id="app"></div>
         @vite('resources/js/app.js')
     </body>
