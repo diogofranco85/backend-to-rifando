@@ -15,19 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix("/")->group(function () {
-    Route::get('/', [PortalController::class, "index"]);
-    Route::get('/sorteios', [PortalController::class, "index"]);
-    Route::get('/sorteios/{id}', [PortalController::class, "index"]);
-    Route::get('/premiados', [PortalController::class, "index"]);
-    Route::get('/pedidos', [PortalController::class, "index"]);
-    Route::get('/ajuda', [PortalController::class, "index"]);
-});
-
-Route::prefix("/manager")->group(function () {
-    Route::get('/', [PortalController::class, "index"]);
-    Route::get('/sorteios', [PortalController::class, "index"]);
-    Route::get('/sorteios/{id}', [PortalController::class, "index"]);
-    Route::get('/premiados', [PortalController::class, "index"]);
-    Route::get('/pedidos', [PortalController::class, "index"]);
-    Route::get('/ajuda', [PortalController::class, "index"]);
+    Route::get('/', [PortalController::class, "index"])->name("index.home");
+    Route::get('/premios', [PortalController::class, "index"])->name("index.sweepstakes");
+    Route::get('/premios/{id}', [PortalController::class, "index"])->name("index.sweepstakes.id");
+    Route::get('/ganhadores', [PortalController::class, "index"])->name("index.awarded");
+    Route::get('/pedidos', [PortalController::class, "index"])->name("index.requests");
+    Route::get('/ajuda', [PortalController::class, "index"])->name("index.helper");
 });

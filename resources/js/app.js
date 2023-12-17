@@ -7,25 +7,40 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from "../vue/app.vue";
 import Home from "../vue/home.vue";
 import Winners from "../vue/winners.vue";
-import Actions from "../vue/actions.vue";
 import ActionsItems from "../vue/actionsItems.vue";
 import Sweepstakes from "../vue/sweepstakes.vue";
 import Requests from "../vue/requests.vue";
+import Helpeme from "../vue/helpme.vue";
+import PathNotfound from "../vue/pathNotfound.vue";
 
-import { BiInstagram, CoMagnifyingGlass } from "oh-vue-icons/icons"
+import {
+    BiInstagram,
+    CoMagnifyingGlass,
+    BiArrowRightSquare,
+    IoTrophyOutline,
+    BiTrophy
+} from "oh-vue-icons/icons"
 import { OhVueIcon, addIcons } from "oh-vue-icons"
 
-addIcons(BiInstagram, CoMagnifyingGlass)
+addIcons(
+    BiInstagram,
+    CoMagnifyingGlass,
+    BiArrowRightSquare,
+    IoTrophyOutline,
+    BiTrophy
+)
 
 const pinia = createPinia().use(piniaPluginPersistedstate);
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: "/", component: Home },
-        { path: "/sorteios", component: Sweepstakes },
-        { path: "/premiados", component: Winners },
+        { path: "/premios", component: Sweepstakes },
+        { path: "/premios/:id", component: ActionsItems },
+        { path: "/ganhadores", component: Winners },
         { path: "/pedidos", component: Requests },
-        { path: "/sorteios/:id", component: ActionsItems },
+        { path: "/ajuda", component: Helpeme },
+        { path: "/:pathMatch(.*)*", component: PathNotfound },
     ]
 })
 

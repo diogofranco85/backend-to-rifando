@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: "http://localhost/api",
+export const httpRequest = axios.create({
+    baseURL: window.apiBackendUrl,
     headers: {
         "Content-type": "application/json",
         "Accept": "application/json",
+        "x-tenant-id": window.tenantId,
+        'X-Requested-With': 'XMLHttpRequest'
     }
 })
-
-export default api;

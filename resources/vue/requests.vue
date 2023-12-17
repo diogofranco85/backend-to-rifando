@@ -1,5 +1,5 @@
 <template>
-    <main class="relative h-full">
+    <main class="min-h-[38vh]">
         <section class="py-4">
             <div class="flex flex-col py-5">
                 <div class="flex flex-col justify-center lg:items-center mb-6">

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Rifando Online</title>
+        <title>{{(isset($pageTitle))  ? $serviceName | $pageTitle  : $serviceName }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,13 +15,17 @@
 
         @vite('resources/css/app.css')
     </head>
-    <body class="antialiased font-montserrat h-screen bg-zinc-800">
-        @if (env('APP_ENV')!== 'Production')
+    <body class="antialiased font-cabin h-screen bg-zinc-800" style="overflow-x: hidden">
+        @if (env('APP_ENV') === 'Sandbox')
             <div class="banner-sandbox ">
                 <p>ESSE AMBIENTE FOI DESENVOLVIDO PARA TESTE | SENDO ASSIM AÇÕES CRIADAS AQUI NÃO TEM VALOR REAL</p>
             </div>
         @endif
         <div id="app"></div>
+        <script>
+            window.tenantId = '{{ $tenantId }}'
+            window.apiBackendUrl = '{{ $apiBackendUrl }}'
+        </script>
         @vite('resources/js/app.js')
     </body>
 </html>

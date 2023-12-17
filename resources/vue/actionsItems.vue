@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main class="min-h-[38vh]">
         <h1 class="text-white">Ações items</h1>
-    </div>
+    </main>
 </template>
